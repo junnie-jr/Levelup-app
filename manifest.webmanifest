@@ -1,7 +1,7 @@
 {
  "name": "Level UP",
  "short_name": "Level UP",
- "start_url": "./",
+ "start_url": "./?source=pwa",
  "scope": "./",
  "display": "standalone",
  "orientation": "portrait",
@@ -26,5 +26,12 @@
    "type": "image/png",
    "purpose": "maskable"
   }
+ ],
+ "id": "levelup-tracker",
+ "lang": "en",
+ "prefer_related_applications": false,
+ "categories": [
+  "health",
+  "fitness"
  ]
 }
