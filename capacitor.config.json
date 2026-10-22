@@ -1,0 +1,8 @@
+{
+  "appId": "com.junnie.levelup",
+  "appName": "Level UP",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
