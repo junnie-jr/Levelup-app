@@ -39,6 +39,8 @@ jobs:
       - name: Create Android project
         run: |
           npx cap add android
+          mkdir -p android/app/src/main/java/com/junnie/levelup
+          cp native/GalleryPlugin.java native/MainActivity.java android/app/src/main/java/com/junnie/levelup/
           python3 - <<'PY'
           p = 'android/app/src/main/AndroidManifest.xml'
           s = open(p).read()
@@ -49,6 +51,7 @@ jobs:
               <data android:scheme="com.junnie.levelup" android:host="auth"/>
           </intent-filter>'''
           s = s.replace('</activity>', f + '\n</activity>', 1)
+          s = s.replace('<application', '<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>\n    <application', 1)
           open(p, 'w').write(s)
           PY
           VER="${{ inputs.version }}"
