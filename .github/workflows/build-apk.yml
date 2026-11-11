@@ -52,6 +52,7 @@ jobs:
           </intent-filter>'''
           s = s.replace('</activity>', f + '\n</activity>', 1)
           s = s.replace('<application', '<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>\n    <application', 1)
+          s = s.replace('<application', '<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>\n    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>\n    <uses-permission android:name="android.permission.VIBRATE"/>\n    <application', 1)
           open(p, 'w').write(s)
           PY
           VER="${{ inputs.version }}"
